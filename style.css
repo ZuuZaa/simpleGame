@@ -15,10 +15,10 @@ a {
    
 
 }
-/*a:hover {
+a:hover {
     text-decoration:  none;
     color: azure;
-}*/
+}
 .timer {
     text-align: center;
     padding-left: 40%;
@@ -44,7 +44,7 @@ h2 {
     width: 20%;
     color: azure;
     background-color: rgb(150, 86, 209);
-    opacity: 0.7;
+    opacity: 0.8;
     font-family:  'Gloria Hallelujah', cursive;
     font-size: 1.5em;
     border:2px solid rgb(205, 209, 212);

@@ -25,13 +25,12 @@ function timer() {
     $(".time").append($("<h2>" + second + "</h2>"))
     if (second == 0) {
         clearInterval(interval)
-        alert("Vaxt bitdi")
         $(".win-loose").append($("<h2>" + "VAXT BITDI :(" + "</h2>"))
         bitdi()
     }
 }
 
-var interval = setInterval(timer, 300)
+var interval = setInterval(timer, 1000)
 function bitdi() {
     clearInterval(interval)
     $(".btn-holder").empty()
@@ -66,13 +65,11 @@ $(".my-btn").on("click", function () {
     for (let i = 0; i < suallar.length; i++) {
         if (answer.data("name") == suallar[i].dogrucavab) {
             correct++
+        }else {
+            incorrect ++
         }
-    } 
-    for (let i = 0; i < suallar.length; i++) {
-        if (answer.data("name") != suallar[i].dogrucavab) {
-            incorrect++
-        }
-    }
+   } 
+    
 })
 console.log(correct)
 console.log(incorrect)
