@@ -52,7 +52,7 @@ for (let i = 0; i < suallar.length; i++) {
         console.log(suallar[i].cavab[j])
         console.log(j)
         console.log(answer.data("name"))
-        answer.html("<h2>" + suallar[i].cavab[j] + "</h2>")
+        answer.html("<h3>" + suallar[i].cavab[j] + "</h3>")
 
         $(".btn-holder").append(answer)
     }
@@ -62,13 +62,16 @@ for (let i = 0; i < suallar.length; i++) {
 $(".btn-holder").append("<button class='bitir'>bitir</button>")
 
 $(".my-btn").on("click", function () {
+    var temp = correct;
     for (let i = 0; i < suallar.length; i++) {
-        if (answer.data("name") == suallar[i].dogrucavab) {
+        console.log(this.data('name'), suallar[i].dogrucavab)
+        if (this.data("name") == suallar[i].dogrucavab) {
             correct++
-        }else {
-            incorrect ++
         }
    } 
+  if (correct == temp) {
+        incorrect++;
+   }
     
 })
 console.log(correct)
