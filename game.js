@@ -34,24 +34,19 @@ var interval = setInterval(timer, 1000)
 function bitdi() {
     clearInterval(interval)
     $(".btn-holder").empty()
-    $(".btn-holder").append("<h2>" + "doğru cavab sayı: "+ correct + "</h2>")
-    $(".btn-holder").append("<h2>" + "yanlış cavab sayı: "+ incorrect + "</h2>")
+    $(".btn-holder").append("<h2>" + "doğru cavab sayı: " + correct + "</h2>")
+    $(".btn-holder").append("<h2>" + "yanlış cavab sayı: " + incorrect + "</h2>")
 }
 for (let i = 0; i < suallar.length; i++) {
     var sual = ($("<div>"))
     sual.addClass("sual")
     sual.html("<h2>" + suallar[i].sual + "</h2>");
-    console.log(suallar[i].sual)
-    console.log(i)
     $(".btn-holder").append(sual)
     for (let j = 0; j < suallar[i].cavab.length; j++) {
         var answer = $("<button>")
         answer.addClass("btn-light")
         answer.addClass("my-btn")
         answer.attr("data-name", suallar[i].cavab[j])
-        console.log(suallar[i].cavab[j])
-        console.log(j)
-        console.log(answer.data("name"))
         answer.html("<h3>" + suallar[i].cavab[j] + "</h3>")
 
         $(".btn-holder").append(answer)
@@ -63,20 +58,16 @@ $(".btn-holder").append("<button class='bitir'>bitir</button>")
 
 $(".my-btn").on("click", function () {
     var temp = correct;
+
     for (let i = 0; i < suallar.length; i++) {
-        console.log(this.data('name'), suallar[i].dogrucavab)
-        if (this.data("name") == suallar[i].dogrucavab) {
+        if ($(this).data("name") == suallar[i].dogrucavab) {
             correct++
         }
-   } 
-  if (correct == temp) {
+    }
+    if (correct == temp) {
         incorrect++;
-   }
-    
+    }
 })
-console.log(correct)
-console.log(incorrect)
-
-$(".bitir").on("click",function(){
+$(".bitir").on("click", function () {
     bitdi()
 })
